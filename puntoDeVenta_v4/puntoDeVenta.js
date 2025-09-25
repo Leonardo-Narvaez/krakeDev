@@ -9,42 +9,12 @@ calcularValorTotal = function () {
     let valorSubtotal=calcularSubtotal(precioProducto,cantidad);
     mostrarTexto("lblSubtotal",valorSubtotal);
     let valorDescuento=calcularValorDescuento(valorSubtotal,porcentajeDescuento);
-    mostrarTexto("lblDescuento",valorDescuento)
+    mostrarTexto("lblDescuento",valorDescuento);
     let valorIVA=calcularIva(valorSubtotal-valorDescuento);
     mostrarTexto("lblValorIVA",valorIVA);
-    let valorTotal; 
-        /*
-            Caso de prueba: 
-                - cantidad: 10 
-                - precioProducto: 5.4  
-                - descuento: 10
-
-                    - valorSubtotal: 54
-                    - descuento:5.4
-                    - valorSubtotal 
-                    - descuento: 48.6
-
-                IVA esperado: 5.832
-
-            Si el caso de prueba es exitoso, hacer un commit
-        */
-    //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
-    //11. Mostrar el resultado en el componente lblTotal
-    /*
-        Caso de prueba: 
-            - cantidad: 10
-            - precioProducto: 5.4 
-            - descuento: 10
-
-                --valorSubtotal: 5.4
-                --descuento: 5.4
-                --IVA: 5.832
-
-                Total esperado: 54.432
-
-                Si el caso de prueba es exitoso, hacer un commit
-       */
-            
+    let valorTotal=calcularTotal(valorSubtotal,valorDescuento,valorIVA); 
+    mostrarTexto("lblTotal",valorTotal);
+  
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
     /*
         Ejemplo: 

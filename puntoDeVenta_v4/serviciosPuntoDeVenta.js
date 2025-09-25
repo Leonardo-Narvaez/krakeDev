@@ -8,6 +8,7 @@ calcularIva=function(monto){
     let valorIVA
     valor1=(monto*1.12)-monto;
     valorIVA=valor1.toFixed(3);
+    valorIVA=parseFloat(valorIVA)
     return valorIVA;
 }
 calcularSubtotal=function(precio,cantidad){
