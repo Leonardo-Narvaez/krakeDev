@@ -16,9 +16,9 @@ calcularTasaInteres=function(ingresoAnual){
 calcularCapacidadPago=function(edad,ingresos,egresos){
     let valorCuota;
     if(edad>50){
-        valorCuota=(egresos-ingresos)*0.30;
+        valorCuota=(ingresos-egresos)*0.30;
     }else if(edad<=50){
-        valorCuota=(egresos-ingresos)*0.40;
+        valorCuota=(ingresos-egresos)*0.40;
     }
     return valorCuota
 }
@@ -27,11 +27,11 @@ calcularDescuento=function(precio,cantidad){
     if(cantidad>3){
         valorDescuento=precio-0;
     }else if(cantidad>=3 && cantidad<=5){
-        valorDescuento=(precio*0.02)-precio;
+        valorDescuento=precio-(precio*0.02);
     }else if(cantidad>=6 && cantidad<=11){
-        valorDescuento=(precio*0.03)-precio;
+        valorDescuento=precio-(precio*0.03);
     }else if(cantidad>=12){
-        valorDescuento=(precio*0.04)-precio;
+        valorDescuento=precio-(precio*0.04);
     }
     return valorDescuento;
 }
@@ -43,13 +43,15 @@ determinarColesterolLDL=function(nivelColesterol){
         nivelC="CASI OPTIMO";
     }else if(nivelColesterol>=130 && nivelColesterol<=159){
         nivelC="LIMITE ALTO";
-    }else if(nivelColesterol>=160){
+    }else if(nivelColesterol>=160 && nivelColesterol<=189){
         nivelC="ALTO";
+    }else if(nivelColestero>=190){
+        nivelC="MUY ALTO";
     }
     return nivelC;
 }
 validarClave=function(clave){
-    let ext=clave.lenght;
+    let ext=clave.length;
     if(ext>=8 && ext<=16){
         return true; 
     }else{
@@ -66,7 +68,7 @@ esMayuscula=function(caracter){
 }
 esMinuscula=function(caracter){
     let ascii=caracter.charCodeAt(0);
-    if(ascii>=97 && ascii<=122 || ascii==160,130,161,162,163){
+    if((ascii>=97 && ascii<=122) || (ascii==130) || ascii>=160 && ascii<=163){
         return true;
         }else{
             return false;
@@ -81,7 +83,6 @@ esDigito=function(caracter){
     }
 }
 darPermiso=function(notaMatematica,notaFisica,notaGeometria){
-    let permiso;
     if(notaMatematica>90 || notaFisica>90 || notaGeometria>90){
         return true;
     }else{
@@ -89,16 +90,14 @@ darPermiso=function(notaMatematica,notaFisica,notaGeometria){
     }
 }
 otorgarPermiso=function(notaMatematica,notaFisica,notaGeometria){
-    let permiso;
-    if(notaMatematica>90 || notaFisica>90 && notaGeometria>80){
+    if((notaMatematica>90 || notaFisica>90) && notaGeometria>80){
         return true;
     }else{
         return false
     }
 }
 dejarSalir=function(notaMatematica,notaFisica,notaGeometria){
-    let permiso;
-    if(notaMatematica>90 || notaFisica>90 || notaGeometria>90 && notaFisica>notaMatematica){
+    if((notaMatematica>90 || notaFisica>90 || notaGeometria>90) && notaFisica>notaMatematica){
         return true;
     }else{
         return false;
