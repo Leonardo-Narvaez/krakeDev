@@ -29,4 +29,3 @@ limpiar = function () {
    mostrarTexto("lblResumen","");
 
 }
-/* SI TODO FUNCIONA, HACER UN PUSH */
