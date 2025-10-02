@@ -14,18 +14,6 @@ calcularValorTotal = function () {
         let valorTotal = calcularTotal(valorSubtotal, valorDescuento, valorIVA);
         mostrarTexto("lblTotal", valorTotal);
     }
-
-
-
-}
-limpiar = function () {
-    mostrarTextoEnCaja("txtProducto", "");
-    mostrarTextoEnCaja("txtPrecio", "");
-    mostrarTextoEnCaja("txtCantidad", "");
-    mostrarTexto("lblSubtotal", "0.0");
-    mostrarTexto("lblDescuento", "0.0");
-    mostrarTexto("lblValorIVA", "0.0");
-    mostrarTexto("lblTotal", "0.0");
 }
 esProductoValido = function (nombreProducto, idError) {
     let caracter = nombreProducto.length;
@@ -73,4 +61,16 @@ esPrecioValido = function (precioProducto, idError) {
         mostrarTexto(idError, "");
     }
     return error;
+}
+limpiar = function () {
+    mostrarTextoEnCaja("txtProducto", "");
+    mostrarTextoEnCaja("txtPrecio", "");
+    mostrarTextoEnCaja("txtCantidad", "");
+    mostrarTexto("lblSubtotal", "0.0");
+    mostrarTexto("lblDescuento", "0.0");
+    mostrarTexto("lblValorIVA", "0.0");
+    mostrarTexto("lblTotal", "0.0");
+    mostrarTexto("lblError1", "");
+    mostrarTexto("lblError2", "");
+    mostrarTexto("lblError3", "");
 }
