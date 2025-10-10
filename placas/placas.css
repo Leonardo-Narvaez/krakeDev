@@ -1,0 +1,56 @@
+body {
+   background-color:rgb(24, 22, 22);
+   background-size: cover; 
+}
+
+.general {
+    display: flex;
+    flex-direction: column; 
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ingreso {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+}
+
+.caja {
+    border-color: rgba(19, 216, 1, 0.884);
+    border-radius: 5px; 
+    font-size: 25px;
+
+}
+
+.boton {
+    border-color: rgba(18, 238, 10, 0.904);
+    margin-left: 20px;
+    width: 150px;
+    font-size: 25px;
+}
+
+.resultados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.validacion {
+    font-size: 25px;
+    color:white;
+}
+
+.parametros {
+    font-size: 20px;
+    color:red;   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
