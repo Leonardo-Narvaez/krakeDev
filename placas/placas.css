@@ -1,11 +1,11 @@
 body {
-   background-color:rgb(24, 22, 22);
-   background-size: cover; 
+    background-color: rgb(24, 22, 22);
+    background-size: cover;
 }
 
 .general {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .titulo {
@@ -26,9 +26,14 @@ body {
 
 .caja {
     border-color: rgba(19, 216, 1, 0.884);
-    border-radius: 5px; 
+    border-radius: 5px;
     font-size: 25px;
 
+}
+.resultados{
+display: flex;
+margin-left: 80px;
+margin-right: 100px;
 }
 
 .boton {
@@ -37,20 +42,30 @@ body {
     width: 150px;
     font-size: 25px;
 }
-
-.resultados {
+.estructura {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .validacion {
-    font-size: 25px;
-    color:white;
+    font-size: 20px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .parametros {
-    font-size: 20px;
-    color:red;   
+    font-size: 15px;
+    color: red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.informacion {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px;
+
 }
