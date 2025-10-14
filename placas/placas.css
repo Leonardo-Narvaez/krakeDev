@@ -30,10 +30,12 @@ body {
     font-size: 25px;
 
 }
-.resultados{
-display: flex;
-margin-left: 80px;
-margin-right: 100px;
+
+.resultados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }
 
 .boton {
@@ -42,6 +44,7 @@ margin-right: 100px;
     width: 150px;
     font-size: 25px;
 }
+
 .estructura {
     display: flex;
     flex-direction: column;
@@ -54,10 +57,10 @@ margin-right: 100px;
 }
 
 .parametros {
-    font-size: 15px;
+    font-size: 20px;
     color: red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+
 }
 
 .informacion {
@@ -66,6 +69,4 @@ margin-right: 100px;
     color: white;
     display: flex;
     flex-direction: column;
-    margin-left: 90px;
-
 }
