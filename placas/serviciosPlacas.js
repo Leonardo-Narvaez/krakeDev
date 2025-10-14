@@ -185,4 +185,22 @@ obtenerTipoVehiculo = function (placa) {
     }
     return errores;
 }
+obtenerDiaPicoYPlaca = function (placa) {
+    let caracter = placa.charAt(placa.length - 1);
+    if (caracter == 1 || caracter == 2) {
+        mostrarTexto("dia", "Pico y Placa: Lunes");
+    }
+    if (caracter == 3 || caracter == 4) {
+        mostrarTexto("dia", "Pico y Placa: Martes");
+    }
+    if (caracter == 5 || caracter == 6) {
+        mostrarTexto("dia", "Pico y Placa: Miercoles");
+    }
+    if (caracter == 7 || caracter == 8) {
+        mostrarTexto("dia", "Pico y Placa: Jueves");
+    }
+    if (caracter == 9 || caracter == 0) {
+        mostrarTexto("dia", "Pico y Placa: Viernes");
+    }
+}
 

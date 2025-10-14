@@ -7,15 +7,18 @@ validarPlaca = function () {
         if (erroresProvincia === null) {
             mostrarTexto("provincia", "Provincia Incorrecta");
         }
-        let erroresVehiculo = obtenerTipoVehiculo(placa);
-        if (erroresVehiculo === null) {
+        let tipoVehiculo = obtenerTipoVehiculo(placa);
+        if (tipoVehiculo === null) {
             mostrarTexto("vehiculo", "Tipo de vehiculo incorrecto")
         }
+        let diaPicoYPlaca = obtenerDiaPicoYPlaca(placa);
 
 
     } else {
         mostrarTexto("lblResultado", "Estructura Incorrecta");
         mostrarTexto("provincia", "");
         mostrarTexto("vehiculo", "");
+        mostrarTexto("dia", "");
     }
 }
+
