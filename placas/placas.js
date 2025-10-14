@@ -21,4 +21,11 @@ validarPlaca = function () {
         mostrarTexto("dia", "");
     }
 }
-
+limpiar = function () {
+    mostrarTextoEnCaja("placa", "");
+    mostrarTexto("lblResultado", "");
+    mostrarTexto("lblErrores", "");
+    mostrarTexto("provincia", "");
+    mostrarTexto("vehiculo", "");
+    mostrarTexto("dia", "");
+}
