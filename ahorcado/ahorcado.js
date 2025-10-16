@@ -48,3 +48,13 @@ mostrarLetra = function (letra, posicion) {
     }
 
 }
+validar = function (letra) {
+    let letrasEncontradas = 0;
+    for (i = 0; i <= palabraSecreta.length; i++) {
+        let caracter = palabraSecreta.charAt(i);
+        if (caracter == letra) {
+            mostrarLetra(caracter, i);
+            letrasEncontradas++;
+        }
+    }
+}
