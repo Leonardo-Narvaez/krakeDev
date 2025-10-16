@@ -22,12 +22,12 @@ guardarPalabra = function () {
             console.log(palabra);
 
         } else {
-            alert("Debe ingresar una palabra de 5 letras mayusculas");
+            alert("DEBE INGRESAR UNA PALABRA DE 5 LETRAS MAYUSCULAS");
 
         }
 
     } else {
-        alert("Debe ingresar una palabra de 5 letras mayusculas");
+        alert("DEBE INGRESAR UNA PALABRA DE 5 LETRAS MAYUSCULAS");
     }
 }
 mostrarLetra = function (letra, posicion) {
@@ -56,5 +56,13 @@ validar = function (letra) {
             mostrarLetra(caracter, i);
             letrasEncontradas++;
         }
+    }
+}
+ingresarLetra = function () {
+    let letra = recuperarTexto("txtLetra");
+    if (!esMayuscula(letra)) {
+        alert("SOLO SE ACEPTAN MAYUSCULAS");
+    } else {
+        validar(letra);
     }
 }
