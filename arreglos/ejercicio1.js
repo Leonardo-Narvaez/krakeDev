@@ -11,6 +11,7 @@ probarAgregar = function () {
 }
 agregarNota = function (nota) {
     notas.push(nota);
+    mostrarNotas();
 }
 recorrerArreglo = function () {
     let notaR = 0;
@@ -31,4 +32,22 @@ calcularPromedio = function () {
     }
     promedio = sumarNotas / notas.length;
     return promedio;
+}
+agregarTabla = function () {
+    let tabla = "";
+    let cmpTabla = document.getElementById("divTabla");
+    tabla += "<table><tr><td>UNKNOWN</td></tr>" +
+        "<tr><td>DOS</td><td>TRES</td></tr></table>";
+    cmpTabla.innerHTML = tabla;
+}
+mostrarNotas = function () {
+    let cmpTabla = document.getElementById("divTabla");
+    let tabla = "<table><tr><th>NOTAS</th></tr>";
+    let miNota;
+    for (i = 0; i <= notas.length - 1; i++) {
+        miNota = notas[i];
+        tabla += "<tr><td>" + miNota + "</tr></td>"
+    }
+    tabla += "</table>";
+    cmpTabla.innerHTML = tabla;
 }
