@@ -79,11 +79,11 @@ body{
     justify-content: center;
 }
 tbody tr:nth-child(odd) {
-    background-color: #908efc;
+    background-color: rgb(3, 230, 143);
   }
   
   tbody tr:nth-child(even) {
-    background-color: #6a51cf;
+    background-color: rgb(49, 233, 3);
   }
   
   tbody tr {
@@ -96,6 +96,9 @@ tbody tr:nth-child(odd) {
   }
   td{
     text-align: center;
+  }
+  th{
+    background-color: rgb(194, 216, 1);
   }
   .areaTabla{
     margin-top: 20px;
