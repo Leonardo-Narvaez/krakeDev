@@ -1,28 +1,79 @@
-recuperarTexto=function(idComponente){
-    let componente=document.getElementById(idComponente);
-    let valorIngresado=componente.value;
+mostrarImagen = function (idComponente, rutaImagen) {
+    let componente;
+    componente = document.getElementById(idComponente);
+    componente.src = rutaImagen;
+}
+mostrarTexto = function (idComponente, mensaje) {
+    let componente;
+    componente = document.getElementById(idComponente);
+    componente.innerText = mensaje;
+}
+mostrarTextoEnCaja = function (idComponente, mensaje) {
+    let componente;
+    componente = document.getElementById(idComponente);
+    componente.value = mensaje;
+}
+
+recuperarTexto = function (idComponente) {
+    let componente;
+    let valorIngresado;
+    componente = document.getElementById(idComponente);
+    valorIngresado = componente.value;
     return valorIngresado;
 }
-recuperarInt=function(idComponente){
-    let valorInt=recuperarTexto(idComponente);
-    valorInt=parseInt(valorInt)
-    return valorInt;
-}
-recuperarFloat=function(idComponente){
-    let valorFloat=recuperarTexto(idComponente);
-    valorFloat=parseFloat(valorFloat);
-    return valorFloat;
-}
-mostrarTexto=function(idComponente,mensaje){
-    let cmpTxt=document.getElementById(idComponente);
-    cmpTxt.innerText=mensaje;
 
+recuperarInt = function (idComponente) {
+    let valorCaja = recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
 }
-mostrarImagen=function(idComponente,imagen){
-    let cmpimagen=document.getElementById(idComponente);
-    cmpimagen.src=imagen;
+
+recuperarFloat = function (idComponente) {
+    let valorCaja = recuperarTexto(idComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
 }
-mostrarTextoEnCaja=function(idComponente,txt){
-    let cmpTxt=document.getElementById(idComponente);
-    cmpTxt.value=txt;
+
+mostrarComponente = function (idComponente) {
+    document.getElementById(idComponente).style.display = "block";
+}
+
+ocultarComponente = function (idComponente) {
+    document.getElementById(idComponente).style.display = "none";
+}
+
+deshabilitarComponente = function (idComponente) {
+    document.getElementById(idComponente).disabled = true;
+}
+
+habilitarComponente = function (idComponente) {
+    document.getElementById(idComponente).disabled = false;
+}
+esMayuscula = function (caracteres) {
+    let error = false;
+    for (let i = 0; i < caracteres.length; i++) {
+        let caracter = caracteres.charAt(i);
+        let mayuscula = caracter.charCodeAt(0)
+        if ((mayuscula == 209) || mayuscula >= 65 && mayuscula <= 90) {
+            error = true;
+
+        } else {
+            error = false
+            break
+        }
+    }
+}
+esDigito = function (caracteres) {  //se modifica para strings
+    let error = false;
+    for (i = 0; i < caracteres.length; i++) {
+        let caracter = caracteres.charCodeAt(i);
+        let digito = caracter.charCodeAt(0)
+        if (digito >= 48 && digito <= 57) {
+            error = true;
+        } else {
+            error = false
+            break
+        }
+    }
+    return error;
 }
