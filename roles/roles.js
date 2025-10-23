@@ -284,9 +284,11 @@ mostrarTotales = function () {
         totalEmpleador += Number(posicion.aporteEmpleador);
         totalAPagar += Number(posicion.valorAPagar);
     }
+    let totalNomina = totalEmpleado + totalEmpleador + totalAPagar;
     mostrarTexto("infoTotalPago", totalAPagar);
     mostrarTexto("infoAporteEmpresa", totalEmpleador);
     mostrarTexto("infoAporteEmpleado", totalEmpleado);
+    mostrarTexto("infoNomina", totalNomina);
 }
 deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtCedula");
