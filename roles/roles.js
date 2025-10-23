@@ -174,6 +174,17 @@ ejecutarBusqueda = function () {
         alert("EL EMPLEADO NO EXISTE");
     }
 }
+buscarPorRol = function () {
+    let cedula = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado = buscarEmpleado(cedula);
+    if (empleado != null) {
+        mostrarTexto("infoCedula", empleado.cedula);
+        mostrarTexto("infoNombre", empleado.nombre + " " + empleado.apellido);
+        mostrarTexto("infoSueldo", empleado.sueldo);
+    } else {
+        alert("EL EMPLEADO INGRESADO NO EXISTE");
+    }
+}
 deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtCedula");
     deshabilitarComponente("txtNombre");
