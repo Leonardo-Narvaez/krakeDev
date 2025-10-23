@@ -3,6 +3,7 @@ let empleados = [
     { cedula: "0914632123", nombre: "Luisa", apellido: "Gonzalez", sueldo: 900.0 },
     { cedula: "5025649837", nombre: "Hector", apellido: "Lavoe", sueldo: 460.0 }
 ]
+let roles = []
 let esNuevo = false;
 mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
@@ -15,6 +16,7 @@ mostrarOpcionRol = function () {
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardado");
 }
 mostrarOpcionResumen = function () {
     mostrarComponente("divResumen");
@@ -202,6 +204,9 @@ calcularRol = function () {
         mostrarTexto("infoIESS", aporte);
         let valorPagar = calcularValorAPagar(sueldo, aporte, descuentos);
         mostrarTexto("infoPago", valorPagar);
+        if (aporte != 0 && valorPagar != 0) {
+            habilitarComponente("btnGuardado");
+        }
     }
 }
 calcularAporteEmpleado = function (sueldo) {
@@ -213,6 +218,44 @@ calcularValorAPagar = function (sueldo, aporte, descuento) {
     let valorPagar = (sueldo - aporte) - descuento;
     valorPagar = valorPagar.toFixed(2);
     return valorPagar;
+}
+buscarRol = function (cedula) {
+    let rol = null;
+    for (let i = 0; i < roles.length; i++) {
+        let posicion = roles[i];
+        if (cedula == posicion.cedula) {
+            rol = posicion;
+            break
+        }
+    }
+    return rol;
+}
+agregarRol = function (rol) {
+    let rolEncontrado = buscarRol(rol.cedula);
+    if (rolEncontrado === null) {
+        roles.push(rol);
+        alert("ROL INGRESADO CORRECTAMENTE");
+    } else {
+        alert("YA ESXISTE UN ROL CON ESE DATO");
+    }
+}
+calcularAporteEmpleador = function (sueldo) {
+    let aporteEmpleador = (11.5 * sueldo) / 100;
+    return aporteEmpleador;
+}
+guardarRol = function () {
+    let errorRoles = roles.length;
+    let rol = {};
+    rol.cedula = recuperarTextoDiv("infoCedula");
+    rol.nombre = recuperarTextoDiv("infoNombre");
+    rol.sueldo = recuperarTextoDiv("infoSueldo");
+    rol.valorAPagar = recuperarTextoDiv("infoPago");
+    rol.aporteEmpleado = recuperarTextoDiv("infoIESS");
+    rol.aporteEmpleador = calcularAporteEmpleador(rol.sueldo);
+    agregarRol(rol);
+    if (errorRoles < roles.length) {
+        deshabilitarComponente("btnGuardado");
+    }
 }
 deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtCedula");
