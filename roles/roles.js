@@ -181,4 +181,16 @@ deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+limpiar = function () {
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
+    esNuevo = false;
+}
 
