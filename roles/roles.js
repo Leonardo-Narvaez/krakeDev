@@ -185,6 +185,35 @@ buscarPorRol = function () {
         alert("EL EMPLEADO INGRESADO NO EXISTE");
     }
 }
+calcularRol = function () {
+    let sueldo = recuperarTextoDiv("infoSueldo");
+    let descuentos = recuperarTexto("txtDescuentos");
+    let error = true;
+    if (descuentos < 0) {
+        alert("EL VALOR DE DESCUENTO NO PUEDE SER MENOR QUE CERO");
+        error = false;
+    }
+    if (descuentos > sueldo) {
+        alert("EL VALOR NO PUEDE SER MAYOR AL SUELDO DEL EMPLEADO");
+        error = false;
+    }
+    if (error == true) {
+        let aporte = calcularAporteEmpleado(sueldo);
+        mostrarTexto("infoIESS", aporte);
+        let valorPagar = calcularValorAPagar(sueldo, aporte, descuentos);
+        mostrarTexto("infoPago", valorPagar);
+    }
+}
+calcularAporteEmpleado = function (sueldo) {
+    let aporte = (9.45 * sueldo) / 100;
+    aporte = aporte.toFixed(2);
+    return aporte;
+}
+calcularValorAPagar = function (sueldo, aporte, descuento) {
+    let valorPagar = (sueldo - aporte) - descuento;
+    valorPagar = valorPagar.toFixed(2);
+    return valorPagar;
+}
 deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtCedula");
     deshabilitarComponente("txtNombre");

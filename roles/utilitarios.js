@@ -35,6 +35,24 @@ recuperarFloat = function (idComponente) {
     return valorFlotante;
 }
 
+recuperarTextoDiv = function (idComponente) {
+    let componente = document.getElementById(idComponente);
+    let texto = componente.textContent;
+    return texto;
+}
+
+recuperarFloatDiv = function (idComponente) {
+    let valorFlotante = recuperarTextoDiv(idComponente);
+    valorFlotante = parseFloat(valorFlotante);
+    return valorFlotante;
+}
+
+recuperarIntDiv = function (idComponente) {
+    let valorEntero = recuperarTextoDiv(idComponente);
+    valorEntero = parseInt(valorEntero);
+    return valorEntero;
+}
+
 mostrarComponente = function (idComponente) {
     document.getElementById(idComponente).style.display = "block";
 }
