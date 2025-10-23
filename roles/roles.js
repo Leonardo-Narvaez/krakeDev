@@ -22,12 +22,14 @@ mostrarOpcionResumen = function () {
     mostrarComponente("divResumen");
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
+    mostrarRoles();
+    mostrarTotales();
 }
 mostrarEmpleados = function () {
     let idTabla = document.getElementById("tablaEmpleados");
     let empleadoRecibido;
     let contenidoTabla = "<table><tr><th>CEDULA</th><th>NOMBRE</th><th>APELLIDO</th>"
-        + "<th>SUELDO</th>";
+        + "<th>SUELDO</th></tr>";
     for (let i = 0; i < empleados.length; i++) {
         empleadoRecibido = empleados[i];
         contenidoTabla += "<tr><td>" + empleadoRecibido.cedula + "</td><td>"
@@ -256,6 +258,35 @@ guardarRol = function () {
     if (errorRoles < roles.length) {
         deshabilitarComponente("btnGuardado");
     }
+}
+mostrarRoles = function () {
+    let idTabla = document.getElementById("tablaResumen");
+    let rolRecibido;
+    let contenidoTabla = "<table><tr><th>CEDULA</th><th>NOMBRE</th><th>VALOR A PAGAR</th>"
+        + "<th>APORTE EMPLEADO</th><th>APORTE EMPLEADOR</th></tr>";
+    for (let i = 0; i < roles.length; i++) {
+        rolRecibido = roles[i];
+        contenidoTabla += "<tr><td>" + rolRecibido.cedula + "</td><td>"
+            + rolRecibido.nombre + "</td><td>" + rolRecibido.valorAPagar
+            + "</td><td>" + rolRecibido.aporteEmpleado + "</td><td>"
+            + rolRecibido.aporteEmpleador + "</td></tr>"
+    }
+    contenidoTabla += "</table>";
+    idTabla.innerHTML = contenidoTabla;
+}
+mostrarTotales = function () {
+    let totalEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalAPagar = 0;
+    for (let i = 0; i < roles.length; i++) {
+        let posicion = roles[i];
+        totalEmpleado += Number(posicion.aporteEmpleado);
+        totalEmpleador += Number(posicion.aporteEmpleador);
+        totalAPagar += Number(posicion.valorAPagar);
+    }
+    mostrarTexto("infoTotalPago", totalAPagar);
+    mostrarTexto("infoAporteEmpresa", totalEmpleador);
+    mostrarTexto("infoAporteEmpleado", totalEmpleado);
 }
 deshabilitarCajasYBoton = function () {
     deshabilitarComponente("txtCedula");
