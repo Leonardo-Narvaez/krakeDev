@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="orden.js"></script>
+    <script src="utilitarios.js"></script>
+    <link href="orden.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+</head>
+
+<body onload="mostrarTablaPersonas();">
+    <div class="gen">
+        <div class="contenido">
+            <div class="titulo">INGRESE LOS DATOS</div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">NOMBRE</div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtNombre" />
+                    <div class="error" id="lblError1"></div>
+                </div>
+            </div>
+            <div class="ingresoDatos">
+                <div class="tituloCampo">EDAD</div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtEdad" />
+                    <div class="error" id="lblError2"></div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="GUARDAR" class="estiloBoton" onclick="guardar();" />
+                </div>
+                <div class="contenedorBoton">
+                    <input type="button" value="ENCONTRAR MAYOR" class="estiloBoton" onclick="determinarMayor();" />
+                </div>
+                <div class="contenedorBoton">
+                    <input type="button" value="ENCONTRAR MENOR" class="estiloBoton" onclick="determinarMenor();" />
+                </div>
+            </div>
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div id="tablaPersonas" class="areaTabla"></div>
+            </div>
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div id="lblPersonaMayor"></div>
+            </div>
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div id="lblPersonaMenor"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
