@@ -1,0 +1,25 @@
+tbody tr:nth-child(odd) {
+    background-color: rgb(3, 230, 143);
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: rgb(49, 233, 3);
+  }
+  
+  tbody tr {
+    background-image: url(noise.png);
+  }
+  
+  table {
+    background-color: #0b0c0c;
+    width: 100%;
+  }
+  td{
+    text-align: center;
+  }
+  th{
+    background-color: rgb(194, 216, 1);
+  }
+  .areaTabla{
+    margin-top: 20px;
+  }

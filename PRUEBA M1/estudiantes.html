@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="estudiantes.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+
+<body onload="mostrarEstudiantes();">
+    <h2>INGRESE DATOS ESTUDIANTE</h2>
+    <h3>NOMBRE COMPLETO</h3>
+    <div>
+        <input type="text" id="txtNombre" />
+        <div id="lblErrorNombre"></div>
+    </div>
+    <h3>CORREO ELECTRONICO</h3>
+    <div>
+        <input type="text" id="txtCorreo" />
+        <div id="lblErrorCorreo"></div>
+    </div>
+    <h3>ID DE ESTUDIANTE (CEDULA)</h3>
+    <div>
+        <input type="text" id="txtId" />
+        <div id="lblErrorId"></div>
+    </div>
+    <input type="button" value="GUARDAR" onclick="agregarEstudiante();" />
+    <input type="button" value="ELIMINAR" onclick="eliminarEstudiante()" />
+    <div>
+        <h3>TABLA</h3>
+        <div id="tablaEstudiantes"></div>
+    </div>
+</body>
+
+</html>
